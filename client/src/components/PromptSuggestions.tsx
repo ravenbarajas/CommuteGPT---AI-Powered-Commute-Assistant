@@ -7,11 +7,11 @@ interface PromptSuggestionsProps {
 
 const PromptSuggestions: React.FC<PromptSuggestionsProps> = ({ onSelectPrompt }) => {
   return (
-    <div className="flex overflow-x-auto pb-2 mb-2 hidden-scroll">
+    <div className="flex overflow-x-auto pb-2 mb-1 hidden-scroll">
       {suggestedPrompts.map((prompt, index) => (
         <button
           key={index}
-          className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm mr-2 whitespace-nowrap hover:bg-gray-200 transition-colors"
+          className="px-3 py-1.5 bg-[#f7f7f8] text-gray-600 border border-gray-200 rounded-md text-sm mr-2 whitespace-nowrap hover:bg-gray-100 transition-colors"
           onClick={() => onSelectPrompt(prompt)}
         >
           {prompt}

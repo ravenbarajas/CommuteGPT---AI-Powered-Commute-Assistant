@@ -9,30 +9,41 @@ interface MessageBubbleProps {
 const MessageBubble: React.FC<MessageBubbleProps> = ({ isUser, message, children }) => {
   if (isUser) {
     return (
-      <div className="flex items-start justify-end mb-4">
-        <div className="mr-2 bg-user border border-user-border p-3 rounded-lg rounded-tr-none shadow-sm max-w-[80%]">
-          <p className="text-gray-800">{message}</p>
-        </div>
-        <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-          </svg>
+      <div className="flex items-start">
+        <div className="flex-grow text-gray-800">
+          <div className="flex items-start gap-3">
+            <div className="w-7 h-7 flex-shrink-0 mt-0.5">
+              <div className="h-full w-full rounded-full bg-gray-300 flex items-center justify-center text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <div className="flex-grow">
+              <p className="leading-relaxed">{message}</p>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="flex items-start mb-4">
-      <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white flex-shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
-          <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
-        </svg>
-      </div>
-      <div className="ml-2 bg-bot p-3 rounded-lg rounded-tl-none shadow-sm max-w-[85%]">
-        <p className="text-gray-800">{message}</p>
-        {children}
+    <div className="flex items-start">
+      <div className="flex-grow text-gray-800">
+        <div className="flex items-start gap-3">
+          <div className="w-7 h-7 flex-shrink-0 mt-0.5">
+            <div className="h-full w-full rounded-sm bg-primary/90 flex items-center justify-center text-white">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 10L12 14L16 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+              </svg>
+            </div>
+          </div>
+          <div className="flex-grow">
+            <p className="leading-relaxed">{message}</p>
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   );

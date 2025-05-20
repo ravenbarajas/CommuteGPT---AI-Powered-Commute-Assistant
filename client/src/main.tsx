@@ -10,10 +10,10 @@ styleElement.textContent = `
     align-items: center;
   }
   .typing-indicator span {
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     margin: 0 1px;
-    background-color: #10B981;
+    background-color: #10a37f;
     border-radius: 50%;
     display: inline-block;
     opacity: 0.6;
@@ -51,15 +51,6 @@ styleElement.textContent = `
   }
   .hidden-scroll::-webkit-scrollbar {
     display: none;
-  }
-
-  :root {
-    --primary: #10B981;
-    --primary-dark: #047857;
-    --user: #DCFCE7;
-    --user-border: #A7F3D0;
-    --bot: #F3F4F6;
-    --bot-border: #E5E7EB;
   }
 
   .bg-primary {
