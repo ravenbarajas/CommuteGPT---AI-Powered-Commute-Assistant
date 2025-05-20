@@ -1,0 +1,200 @@
+Certainly! Here's a **revised PRD** tailored specifically for a **frontend-only implementation** of the **Conversational Commuter Chatbot for the Philippines**. This version assumes that the **backend is either mocked or integrated later**, and focuses purely on **UI/UX, interactions, and state management on the frontend**.
+
+---
+
+# 📄 Product Requirements Document (PRD)
+
+## 🎯 Product Title
+
+**CommuteGPT (Frontend-Only): Conversational Commuting UI for the Philippines**
+
+---
+
+## 🧭 Purpose
+
+To build a **frontend-only prototype** of a web-based conversational chatbot that helps users in the **Philippines** ask natural language commute questions and receive **mocked or static commute suggestions** in a **chat interface** styled like ChatGPT.
+
+This will be used as a **UI/UX prototype** or demo, and will simulate a working app via hardcoded logic or mock data—no real-time backend integration is required for this version.
+
+---
+
+## 🔧 Scope
+
+* **Frontend-only**
+* **Web-based application**
+* Simulated/Mocked responses (no real API)
+* Optionally mobile-responsive
+
+---
+
+## 🔑 Core Features (Frontend Only)
+
+### 1. Conversational Chat Interface
+
+* Chat UI similar to ChatGPT:
+
+  * Message bubbles (user and bot)
+  * Scrollable conversation window
+  * Typing indicator animation ("Bot is typing...")
+  * Auto-scroll to latest message
+
+### 2. Text Input Bar
+
+* User types commute-related queries
+* Press “Enter” or click “Send” to submit
+* Option to include microphone icon (disabled or non-functional placeholder)
+
+### 3. Message Display
+
+* Support for multiple message types:
+
+  * Text
+  * Suggested steps (mocked route)
+  * Emojis or icons for clarity (e.g., 🚍, 🚶, 🚆)
+* Bot replies with predefined responses (based on keyword matching or hardcoded rules)
+
+### 4. Suggested Prompts (Below Chat Input)
+
+* Quick buttons like:
+
+  * "Cheapest route"
+  * "Avoid MRT"
+  * "From Cubao to Makati"
+* Clicking inserts a predefined query
+
+### 5. Simulated Smart Suggestions (Hardcoded)
+
+* Responses based on keyword matching:
+
+  * If "Cubao" + "Makati" → return fake Jeepney + MRT route
+  * If "Divisoria" → return fake Jeep + walk route
+* Handled purely via frontend logic
+
+### 6. Route Cards (Optional UI Element)
+
+* Visually styled summaries of commute steps
+
+  * Example:
+
+    ```
+    🚶 Walk to MRT Cubao Station  
+    🚆 Take MRT to Ayala Station  
+    🚶 Walk to destination  
+    💸 Estimated Cost: ₱30  
+    ⏱️ Time: ~45 mins
+    ```
+
+---
+
+## 🎨 UI/UX Design
+
+### Visual Style
+
+* Clean and minimalist (GPT-style)
+* Light mode (Dark mode optional)
+* Message bubbles:
+
+  * User: Right-aligned
+  * Bot: Left-aligned
+
+### Responsiveness
+
+* Mobile-friendly layout
+* Sticky input bar on smaller screens
+* Scrollable message history with snapping
+
+---
+
+## 🧩 Component Breakdown
+
+| Component           | Description                                   |
+| ------------------- | --------------------------------------------- |
+| `ChatWindow`        | Holds all messages and scrolls                |
+| `MessageBubble`     | Message from user or bot                      |
+| `InputBar`          | Text input + Send button + suggestion buttons |
+| `TypingIndicator`   | Animated dots while bot "types"               |
+| `RouteCard`         | Styled route breakdown (optional)             |
+| `PromptSuggestions` | Suggested quick prompts/buttons               |
+
+---
+
+## ⚙️ Technology Stack
+
+| Layer            | Tech                                              |
+| ---------------- | ------------------------------------------------- |
+| Framework        | React (with Vite or CRA)                          |
+| Language         | TypeScript                                        |
+| Styling          | TailwindCSS or CSS Modules                        |
+| State Management | useState / useEffect / Context (if needed)        |
+| Mocking          | Static JSON, hardcoded logic, or mock API wrapper |
+
+---
+
+## 🧪 Acceptance Criteria
+
+* [ ] User can input a commute-related question
+* [ ] System responds with a static but relevant mocked reply
+* [ ] Conversation history scrolls correctly
+* [ ] Suggested prompts are clickable and prefill the input
+* [ ] UI is responsive and resembles modern chatbot UX
+
+---
+
+## 💻 Routing
+
+| Route                  | Description                         |
+| ---------------------- | ----------------------------------- |
+| `/`                    | Chatbot interface                   |
+| `/about`               | Info page (optional)                |
+| `/mock-responses.json` | (Optional) Static JSON of mock data |
+
+---
+
+## 📦 Mock Data Suggestions
+
+Create a small dataset of mocked responses in JSON or in code, e.g.:
+
+```json
+{
+  "Cubao to Makati": {
+    "steps": [
+      "Walk to MRT Cubao Station",
+      "Take MRT southbound to Ayala",
+      "Walk to Ayala Triangle",
+      "Total fare: ₱28",
+      "Estimated time: 35 minutes"
+    ]
+  },
+  "Divisoria": {
+    "steps": [
+      "Ride jeepney from Recto to Divisoria",
+      "Walk to Tutuban Mall",
+      "Fare: ₱12"
+    ]
+  }
+}
+```
+
+Then use simple keyword detection in frontend to show responses.
+
+---
+
+## 🚫 Out of Scope
+
+* Real-time backend integration
+* Actual geolocation or maps API
+* NLP or ML processing
+* Live route updates or traffic estimation
+
+---
+
+## 🛠 Future Enhancements (Post-Frontend Build)
+
+* Replace mocked responses with real LLM/chatbot backend
+* Integrate with public transport APIs
+* Add voice recognition for Tagalog/Filipino input
+* Use location services to personalize suggestions
+
+---
+
+Let me know if you'd like a **sample folder structure**, a **React component skeleton**, or a **mocked UI flow demo**. I can also generate **mock JSON files** and **JS logic** for keyword-matching chatbot replies if you're prototyping locally.
